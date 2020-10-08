@@ -5,11 +5,15 @@ import task1.animal.Animal;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-//菜单式系统的实现
+/**
+ * 菜单式系统的实现
+ */
 public class AnimalSystem {
     private static ArrayList<Animal> animals = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
-    //主菜单页
+    /**
+     *主菜单页
+     */
     public static void mainView(){
         while (true){
             System.out.println("------动物信息管理系统-------");
@@ -46,7 +50,9 @@ public class AnimalSystem {
         }
 
     }
-    //删除操作的菜单页
+    /**
+     * 删除操作的菜单页
+     */
     public static void deleteView(){
        while (true){
            System.out.println("------删除动物信息-------");
@@ -76,7 +82,9 @@ public class AnimalSystem {
            }
        }
     }
-    //修改操作的菜单页
+    /**
+     * 修改操作的菜单页
+     */
     public static void updateView(){
         while (true){
             System.out.println("------修改动物信息-------");
@@ -108,7 +116,9 @@ public class AnimalSystem {
             }
         }
     }
-    //查询操作的菜单页
+    /**
+     * 查询操作的菜单页
+     */
     public static void retrieveView(){
         while (true){
             System.out.println("------查询动物信息-------");

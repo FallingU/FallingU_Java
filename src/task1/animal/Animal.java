@@ -1,5 +1,7 @@
 package task1.animal;
-//动物类实现Comparable接口使得可以通过年龄进行排序
+/**
+ * 动物类实现Comparable接口使得可以通过年龄进行排序
+ */
 public class Animal implements Comparable<Animal>{
     private String type;
     private String gender;

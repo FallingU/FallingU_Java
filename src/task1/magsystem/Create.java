@@ -5,7 +5,9 @@ import task1.animal.Animal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//用于实现系统的添加功能
+/**
+ * 用于实现系统的添加功能的类
+ */
 public class Create {
     private static Scanner input = new Scanner(System.in);
     public static void add(ArrayList<Animal> list_ani){

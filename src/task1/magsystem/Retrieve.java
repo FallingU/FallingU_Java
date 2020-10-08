@@ -8,14 +8,20 @@ import java.util.Scanner;
 //提供查询的类
 public class Retrieve {
     private static Scanner input = new Scanner(System.in);
-    //查询显示所有的方法
+    /**
+     *
+     * @param list_ani 要操作的目标集合
+     */
     public static  void displayAll(ArrayList<Animal> list_ani){
         System.out.println("--------所有动物数据如下---------");
         for (Animal animal : list_ani) {
             System.out.println(animal);
         }
     }
-    //根据id查找
+    /**
+     *
+     * @param list_ani 要操作的目标集合
+     */
     public static void displayById(ArrayList<Animal> list_ani){
         int id;
         while (true){
@@ -29,12 +35,18 @@ public class Retrieve {
             }
         }
         boolean flag =false;
-        for (int i=0;i<list_ani.size();i++){
-           if (list_ani.get(i).getId()==id){
-               flag=true;
-               System.out.println(list_ani.get(i));
-               break;
-           }
+        int left=0,right=list_ani.size()-1;
+        while (left<=right){
+            int mid=(left+right)/2;
+            if (list_ani.get(mid).getId()==id){
+                System.out.println(list_ani.get(mid));
+                flag=true;
+                break;
+            }else if (list_ani.get(mid).getId()<id){
+                left=mid+1;
+            }else if (list_ani.get(mid).getId()>id){
+                right=mid-1;
+            }
         }
         if (!flag){
             System.out.println("没有该id的动物");

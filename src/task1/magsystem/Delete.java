@@ -8,7 +8,11 @@ import java.util.Scanner;
 //系统的删除功能的实现
 public class Delete {
     private static Scanner input = new Scanner(System.in);
-    //通过id删除动物
+
+    /**
+     *
+     * @param list_ani 要操作的目标集合
+     */
     public static void deleteById(ArrayList<Animal> list_ani){
         int id;
         while (true){
@@ -22,11 +26,24 @@ public class Delete {
             }
         }
         boolean flag = false;
-        for (int i=0;i<list_ani.size();i++){
-            if (list_ani.get(i).getId()==id){
-                list_ani.remove(list_ani.get(i));
+//        for (int i=0;i<list_ani.size();i++){
+//            if (list_ani.get(i).getId()==id){
+//                list_ani.remove(list_ani.get(i));
+//                flag=true;
+//                break;
+//            }
+//        }
+        int left=0,right=list_ani.size()-1;
+        while (left<=right){
+            int mid=(left+right)/2;
+            if (list_ani.get(mid).getId()==id){
+                list_ani.remove(list_ani.get(mid));
                 flag=true;
                 break;
+            }else if (list_ani.get(mid).getId()<id){
+                left=mid+1;
+            }else if (list_ani.get(mid).getId()>id){
+                right=mid-1;
             }
         }
         //将读取到的该类型的动物全部删除
@@ -36,7 +53,10 @@ public class Delete {
             System.out.println("没有目标id的动物");
         }
     }
-    //通过种类删除动物
+    /**
+     *
+     * @param list_ani 要操作的目标集合
+     */
     public static void deleteByType(ArrayList<Animal> list_ani){
         System.out.println("请输入你要删除的动物类型");
         String type = input.nextLine();
@@ -52,7 +72,7 @@ public class Delete {
         list_ani.removeAll(temp);
         System.out.println("删除成功");
         }else {
-            System.out.println("没有目标id的动物");
+            System.out.println("没有目标类型的动物");
         }
     }
 }
