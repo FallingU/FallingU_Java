@@ -5,7 +5,9 @@ import task1.animal.Animal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//用于实现系统的修改功能的
+/**
+ * 用于实现系统的修改功能的
+ */
 public class Update {
     private static Scanner input = new Scanner(System.in);
     /**
@@ -27,7 +29,7 @@ public class Update {
         boolean flag=false;
         int left=0,right=list_ani.size()-1;
         while (left<=right){
-            int mid=(left+right)/2;
+            int mid=left+(right-left)/2;
             if (list_ani.get(mid).getId()==id){
                 System.out.println("请输入修改后的类型");
                 String type =input.nextLine();
@@ -64,7 +66,7 @@ public class Update {
         boolean flag = false;
         int left=0,right=list_ani.size()-1;
         while (left<=right){
-            int mid=(left+right)/2;
+            int mid=left+(right-left)/2;
             if (list_ani.get(mid).getId()==id){
                 int age;
                 while (true){
@@ -110,7 +112,7 @@ public class Update {
         boolean flag = false;
         int left=0,right=list_ani.size()-1;
         while (left<=right){
-            int mid=(left+right)/2;
+            int mid=left+(right-left)/2;
             if (list_ani.get(mid).getId()==id){
                 flag=true;
                 if ("雌性".equals(list_ani.get(mid).getGender())){

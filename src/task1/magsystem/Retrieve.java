@@ -5,7 +5,9 @@ import task1.animal.Animal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//提供查询的类
+/**
+ *提供查询的类
+ */
 public class Retrieve {
     private static Scanner input = new Scanner(System.in);
     /**
@@ -37,7 +39,7 @@ public class Retrieve {
         boolean flag =false;
         int left=0,right=list_ani.size()-1;
         while (left<=right){
-            int mid=(left+right)/2;
+            int mid=left+(right-left)/2;
             if (list_ani.get(mid).getId()==id){
                 System.out.println(list_ani.get(mid));
                 flag=true;

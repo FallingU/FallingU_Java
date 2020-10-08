@@ -5,7 +5,9 @@ import task1.animal.Animal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//系统的删除功能的实现
+/**
+ * 系统的删除功能的实现
+ */
 public class Delete {
     private static Scanner input = new Scanner(System.in);
 
@@ -26,16 +28,9 @@ public class Delete {
             }
         }
         boolean flag = false;
-//        for (int i=0;i<list_ani.size();i++){
-//            if (list_ani.get(i).getId()==id){
-//                list_ani.remove(list_ani.get(i));
-//                flag=true;
-//                break;
-//            }
-//        }
         int left=0,right=list_ani.size()-1;
         while (left<=right){
-            int mid=(left+right)/2;
+            int mid=left+(right-left)/2;
             if (list_ani.get(mid).getId()==id){
                 list_ani.remove(list_ani.get(mid));
                 flag=true;
